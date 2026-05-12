@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>⚡ Hero Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background: #020c06;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed; inset: 0;
+            background:
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,128,0.03) 2px, rgba(0,255,128,0.03) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,255,128,0.02) 2px, rgba(0,255,128,0.02) 4px);
+            pointer-events: none;
+        }
+        body::after {
+            content: '';
+            position: absolute;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(0,255,128,0.08) 0%, transparent 70%);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        .hero {
+            position: relative; z-index: 1;
+            max-width: 700px; padding: 40px 20px;
+        }
+        .hero-tag {
+            font-size: 11px; letter-spacing: 6px;
+            color: rgba(0,255,128,0.5); text-transform: uppercase; margin-bottom: 16px;
+        }
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(32px, 6vw, 64px);
+            font-weight: 900; line-height: 1.1; margin-bottom: 20px;
+            color: #00ff80;
+            text-shadow: 0 0 20px #00ff80, 0 0 60px #00ffcc;
+        }
+        .hero-title span { color: #00ffcc; text-shadow: 0 0 20px #00ffcc, 0 0 60px #00ff80; }
+        .hero-sub {
+            font-size: 15px; color: rgba(0,255,128,0.55);
+            line-height: 1.8; margin-bottom: 40px;
+        }
+        .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            padding: 14px 32px;
+            background: transparent;
+            color: #00ff80; font-weight: bold; font-size: 14px;
+            border: 1px solid #00ff80; border-radius: 2px; cursor: pointer;
+            transition: all 0.3s; font-family: inherit; letter-spacing: 2px;
+            text-shadow: 0 0 8px #00ff80;
+            box-shadow: 0 0 10px rgba(0,255,128,0.2), inset 0 0 10px rgba(0,255,128,0.05);
+        }
+        .btn-primary:hover {
+            background: rgba(0,255,128,0.1);
+            box-shadow: 0 0 25px rgba(0,255,128,0.4), inset 0 0 20px rgba(0,255,128,0.1);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            padding: 14px 32px; background: transparent;
+            color: rgba(0,255,128,0.5); font-weight: bold; font-size: 14px;
+            border: 1px solid rgba(0,255,128,0.3); border-radius: 2px; cursor: pointer;
+            transition: all 0.3s; font-family: inherit; letter-spacing: 2px;
+        }
+        .btn-outline:hover {
+            color: #00ff80; border-color: #00ff80;
+            box-shadow: 0 0 15px rgba(0,255,128,0.2);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <p class="hero-tag">// Now Playing</p>
+        <h1 class="hero-title">Feel the <span>Burnout</span><br>of Sugarfree</h1>
+        <p class="hero-sub">Dive into the raw energy of Sugarfree. Experience the music, the message, and the fire that ignites every listener.</p>
+        <div class="hero-btns">
+            <button class="btn-primary">▶ PLAY NOW</button>
+            <button class="btn-outline">EXPLORE DISCOGRAPHY</button>
+        </div>
+    </div>
+</body>
+</html>

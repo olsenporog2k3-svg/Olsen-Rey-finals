@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🔥 Sugarfree Burnout</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background: #020c06;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed; inset: 0;
+            background:
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,128,0.03) 2px, rgba(0,255,128,0.03) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,255,128,0.02) 2px, rgba(0,255,128,0.02) 4px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .playlist-bar, .main-wrap { position: relative; z-index: 1; }
+
+        .playlist-bar {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 12px 0;
+            background: rgba(0, 255, 128, 0.05);
+            border-bottom: 1px solid rgba(0, 255, 128, 0.25);
+        }
+        .scroll-text {
+            display: inline-block;
+            color: #00ff80;
+            font-size: 13px;
+            font-weight: bold;
+            padding-left: 100%;
+            animation: scroll 22s linear infinite;
+            text-shadow: 0 0 8px #00ff80, 0 0 20px #00ffcc;
+            letter-spacing: 3px;
+        }
+        @keyframes scroll {
+            0%   { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .main-wrap {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .audio-card {
+            background: rgba(0, 20, 10, 0.85);
+            border: 1px solid rgba(0, 255, 128, 0.35);
+            border-radius: 4px;
+            padding: 48px 60px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0, 255, 128, 0.1), 0 0 80px rgba(0, 255, 128, 0.05), inset 0 0 30px rgba(0, 255, 128, 0.03);
+            max-width: 480px; width: 100%;
+            position: relative;
+        }
+        .audio-card::before, .audio-card::after {
+            content: '';
+            position: absolute;
+            width: 12px; height: 12px;
+            border-color: #00ff80;
+            border-style: solid;
+        }
+        .audio-card::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+        .audio-card::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+        .bts-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 22px; font-weight: 700;
+            color: #00ff80;
+            letter-spacing: 4px;
+            margin-bottom: 6px;
+            text-shadow: 0 0 10px #00ff80, 0 0 30px #00ffcc;
+        }
+        .subtitle {
+            color: rgba(0,255,128,0.45);
+            font-size: 11px;
+            letter-spacing: 5px;
+            margin-bottom: 28px;
+        }
+
+        audio {
+            width: 100%;
+            border-radius: 2px;
+            margin-bottom: 4px;
+            accent-color: #00ff80;
+            filter: hue-rotate(100deg) saturate(1.5);
+        }
+
+        .gif-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .gif {
+            width: 44px; height: 44px;
+            border-radius: 2px;
+            border: 1px solid rgba(0, 255, 128, 0.5);
+            box-shadow: 0 0 10px rgba(0,255,128,0.3);
+        }
+        .album-art {
+            width: 180px; height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 255, 128, 0.4);
+            box-shadow: 0 0 20px rgba(0,255,128,0.25), 0 0 60px rgba(0,255,128,0.08);
+            margin-bottom: 24px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            filter: saturate(1.2) contrast(1.05);
+            transition: box-shadow 0.3s ease;
+        }
+        .album-art:hover {
+            box-shadow: 0 0 35px rgba(0,255,128,0.5), 0 0 80px rgba(0,255,128,0.15);
+        }
+        .gif-label {
+            color: #00ff80;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            text-shadow: 0 0 10px #00ff80;
+        }
+    </style>
+</head>
+<body>
+
+<div class="playlist-bar">
+    <div class="scroll-text">
+        🔥 SUGARFREE — Burnout • Alt-Rock • No Sugar Added • BURNOUT MODE ACTIVATED • 🔥 SUGARFREE — Burnout • Alt-Rock • No Sugar Added • BURNOUT MODE ACTIVATED •
+    </div>
+</div>
+
+<div class="main-wrap">
+    <div class="audio-card">
+        <img class="album-art" src="sugarfree.jpg" alt="Sugarfree">
+        <h2 class="bts-title">⚡ SUGARFREE</h2>
+        <p class="subtitle">// BURNOUT — NOW PLAYING</p>
+        <audio controls>
+            <source src="Sugarfree - Burnout (Official Lyric Video).mp3" type="audio/mpeg">
+        </audio>
+        <div class="gif-row">
+            <img class="gif" src="jake.gif" alt="BTS gif">
+            <span class="gif-label">BURNOUT</span>
+            <img class="gif" src="jake.gif" alt="BTS gif">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

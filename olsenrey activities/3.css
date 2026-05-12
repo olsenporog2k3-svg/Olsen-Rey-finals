@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Share Tech Mono', monospace;
+    background: #020c06;
+    min-height: 100vh;
+    color: white;
+    padding: 60px 40px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background:
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,128,0.03) 2px, rgba(0,255,128,0.03) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,255,128,0.02) 2px, rgba(0,255,128,0.02) 4px);
+    z-index: 0; pointer-events: none;
+}
+.page-header, .btn-list { position: relative; z-index: 1; }
+
+.page-header { text-align: center; margin-bottom: 56px; }
+.page-tag { font-size: 11px; letter-spacing: 5px; color: rgba(0,255,128,0.45); text-transform: uppercase; margin-bottom: 10px; }
+.page-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px; font-weight: 700;
+    color: #00ff80;
+    text-shadow: 0 0 10px #00ff80, 0 0 30px #00ffcc;
+    letter-spacing: 3px;
+}
+
+.btn-list { display: flex; flex-direction: column; gap: 16px; width: 100%; max-width: 680px; }
+
+.btn-row {
+    display: flex; align-items: center; gap: 24px;
+    background: rgba(0, 20, 10, 0.85);
+    border: 1px solid rgba(0, 255, 128, 0.2); border-radius: 4px;
+    padding: 20px 28px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+.btn-row::before, .btn-row::after {
+    content: ''; position: absolute;
+    width: 8px; height: 8px;
+    border-color: #00ff80; border-style: solid;
+}
+.btn-row::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+.btn-row::after  { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
+.btn-row:hover { border-color: rgba(0,255,128,0.5); box-shadow: 0 0 20px rgba(0,255,128,0.1); }
+
+.btn-brand { width: 130px; flex-shrink: 0; font-size: 12px; letter-spacing: 2px; color: #00ff80; text-transform: uppercase; }
+.btn-desc  { flex: 1; font-size: 12px; color: rgba(0,255,128,0.35); font-style: italic; }
+
+.uberbutton { background-color: #000; border: none; color: white; padding: 13px 28px; font-size: 15px; cursor: pointer; font-family: inherit; border-radius: 6px; transition: background-color 0.5s ease; }
+.uberbutton:hover { background-color: rgba(0,0,0,0.5); }
+
+.amazonbutton { background-color: rgb(255,216,20); border: none; color: #000; padding: 13px 28px; font-size: 15px; border-radius: 49px; cursor: pointer; font-family: inherit; transition: background-color 0.5s ease; }
+.amazonbutton:hover { background-color: rgb(207,178,31); }
+
+.githubbutton { background-color: rgb(46,164,79); border: none; color: white; padding: 13px 28px; font-size: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; font-family: inherit; transition: box-shadow 0.5s ease; }
+.githubbutton:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.8), 0 0 12px rgba(46,164,79,0.6); }
+
+.bootstrapbutton { background-color: rgb(121,82,179); border: none; color: white; padding: 13px 28px; font-size: 15px; font-weight: bold; border-radius: 8px; cursor: pointer; font-family: inherit; transition: background-color 0.5s ease; }
+.bootstrapbutton:hover { background-color: rgb(75,44,124); }
+
+.bootstrap2button { background-color: white; border: 1px solid rgb(108,117,125); color: rgb(108,117,125); padding: 13px 28px; font-size: 15px; font-weight: bold; border-radius: 8px; cursor: pointer; font-family: inherit; transition: background-color 0.5s ease, color 0.5s ease; }
+.bootstrap2button:hover { background-color: rgb(108,117,125); color: white; }
+
+.linkedinbutton { background-color: rgb(10,102,194); border: none; color: white; padding: 13px 28px; font-size: 15px; font-weight: bold; border-radius: 49px; cursor: pointer; font-family: inherit; transition: background-color 0.5s ease; }
+.linkedinbutton:hover { background-color: rgb(19,82,146); }
+
+.linkedin2button { background-color: white; border: 1px solid rgb(10,102,194); color: rgb(10,102,194); padding: 13px 28px; font-size: 15px; font-weight: bold; border-radius: 49px; cursor: pointer; font-family: inherit; }
+.linkedin2button:hover { background-color: rgb(76,159,243); border: 3px solid rgb(10,102,194); color: white; }
